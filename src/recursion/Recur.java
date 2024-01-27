@@ -1,7 +1,10 @@
+package recursion;
+
 public class Recur {
     public static void main(String[] args) {
         System.out.println("factorial is: " + factorial(5));
         System.out.println("sum of digits is: " + sumOfDigits(23412));
+        System.out.println("reverse of number is: " + reverseNumber(6789));
     }
 
     static int factorial(int n) {
@@ -19,8 +22,14 @@ public class Recur {
         return d + sumOfDigits(n / 10);
     }
 
-    static void reverseNumber(int n) {
+    static int rev = 0;
+    static int d = 0;
 
-
+    static int reverseNumber(int n) {
+        if (n <= 0)
+            return rev;
+        d = n % 10;
+        rev = rev * 10 + d;
+        return reverseNumber(n / 10);
     }
 }
