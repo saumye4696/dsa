@@ -14,7 +14,7 @@ public class Recur2 {
         return a[index] == target || linearSearch(a, target, index + 1);
     }
 
-    // find index with multiple occurences
+    // find index with multiple occurrences
     static ArrayList<Integer> find(int[] a, int target, int index) {
         ArrayList<Integer> list = new ArrayList<>();
         if (index == a.length) {
