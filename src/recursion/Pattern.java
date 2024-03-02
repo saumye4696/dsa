@@ -37,15 +37,3 @@ tax free mutual funds
 sip
 
 */
-
-
-/*
-*
-* 3sweatshirt
-* 2 jacket black blue
-* belt
-* 2pyjama 2t-shirts
-*
-* xsssedx
-*
-* */
