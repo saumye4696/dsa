@@ -23,7 +23,7 @@ public class CustomStack {
         return true;
     }
 
-    public int pop() {
+    public int pop() throws Exception {
         if (isEmpty()) {
             throw new Exception("Stack is already empty.");
         }
