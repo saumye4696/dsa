@@ -30,6 +30,13 @@ public class CustomStack {
         return data[pointer--];
     }
 
+    public int peek() throws Exception {
+        if (isEmpty()) {
+            throw new Exception("Stack is already empty.");
+        }
+        return data[pointer];
+    }
+
     private boolean isFull() {
         if (pointer == data.length - 1) {
             return true;
