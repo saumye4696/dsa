@@ -1,3 +1,5 @@
+package patterns;
+
 import java.util.*;
 
 class Solution {

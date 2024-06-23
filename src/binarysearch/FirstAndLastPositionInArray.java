@@ -1,3 +1,5 @@
+package binarysearch;
+
 public class FirstAndLastPositionInArray {
     public int[] searchRange() {
         int[] ans = {-1, -1};
