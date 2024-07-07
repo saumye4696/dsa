@@ -7,9 +7,9 @@ import java.util.Arrays;
 
 import static java.lang.Character.isDigit;
 
-public class Trebuchet1 {
+public class TrebuchetPart1 {
     public static void main(String[] args) throws IOException {
-        int ans = Trebuchet1.readFile();
+        int ans = TrebuchetPart1.readFile();
         System.out.println(ans);
     }
 
@@ -38,7 +38,7 @@ public class Trebuchet1 {
         String[] strings = content.split("\n");
 
         return Arrays.stream(strings)
-                .map(Trebuchet1::valuePerString)
+                .map(TrebuchetPart1::valuePerString)
                 .mapToInt(Integer::intValue)
                 .sum();
 
