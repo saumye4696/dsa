@@ -10,10 +10,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CubeConundrum1 {
-    private static final String REGEX = "Game (\\d+):";
+    private static final String GAME_NUMBER_REGEX = "Game (\\d+):"; // fetch the game number
+    private static final String SPLIT_DIGITS_AND_COLOURS_REGEX = "(\\d+) (blue|green|red)"; // fetch the string for a particular pick in a game
+    private static final String BALL_NUMBER_REGEX = "(\\d+)"; // fetch the number of balls for a colour
+    private static final String BALL_COLOUR_REGEX = "(blue|green|red)"; // fetch the word for the colour
 
     public static void main(String[] args) throws IOException {
-        String str = "Game 1: 1 blue, 2 green, 11 red; 7 red, 8 green; 1 green, 2 red, 1 blue; 21 green, 3 red, 1 blue; 8 green, 1 blue";
         int i = CubeConundrum1.readFile();
         System.out.println(i);
     }
@@ -27,7 +29,7 @@ public class CubeConundrum1 {
 
         // Extracting gameNumber number
         int gameNumber = 0;
-        Pattern pattern1 = Pattern.compile(REGEX);
+        Pattern pattern1 = Pattern.compile(GAME_NUMBER_REGEX);
         Matcher matcher = pattern1.matcher(s);
         if (matcher.find()) {
             gameNumber = Integer.parseInt(matcher.group(1));
@@ -43,13 +45,13 @@ public class CubeConundrum1 {
             pick.trim();
         }
 
-        Pattern pattern = Pattern.compile("(\\d+) (blue|green|red)"); // this will split digits and colours
+        Pattern pattern = Pattern.compile(SPLIT_DIGITS_AND_COLOURS_REGEX); // this will split digits and colours
         for (String pick : picksFromOneGame) {
             Matcher colourMatcher = pattern.matcher(pick); // each semi-colon divided string
 
             while (colourMatcher.find()) { // each number and colour
-                Pattern ballNumberPattern = Pattern.compile("(\\d+)");
-                Pattern ballNumberPatternColour = Pattern.compile("(blue|green|red)");
+                Pattern ballNumberPattern = Pattern.compile(BALL_NUMBER_REGEX);
+                Pattern ballNumberPatternColour = Pattern.compile(BALL_COLOUR_REGEX);
                 Matcher ballNumberMatcher = ballNumberPattern.matcher(colourMatcher.group());
                 Matcher ballNumberMatcherColour = ballNumberPatternColour.matcher(colourMatcher.group());
 
