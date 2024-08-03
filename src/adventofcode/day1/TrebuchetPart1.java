@@ -32,7 +32,7 @@ public class TrebuchetPart1 {
     }
 
     public static int readFile() throws IOException {
-        Path filePath = Path.of("/Users/saumyemehrotra/IdeaProjects/LeetcodeQuestions/src/adventofcode/Trebuchet1.txt");
+        Path filePath = Path.of("/Users/saumyemehrotra/IdeaProjects/LeetcodeQuestions/src/adventofcode/day1/Trebuchet1.txt");
         String content = Files.readString(filePath);
 
         String[] strings = content.split("\n");
