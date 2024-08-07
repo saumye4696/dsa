@@ -35,6 +35,9 @@ public class Scratchcards1 {
         String s1 = listString.split("\\|")[0].trim();
         String s2 = listString.split("\\|")[1].trim();
 
+        /** Can also do a s.replaceAll(" +", " ") to make sure there are only
+        *   single spaces everywhere.
+        */
         int[] il1 = Arrays.stream(s1.split(FETCH_NUMBERS_FROM_STRING_REGEX))
                 .mapToInt(Integer::parseInt)
                 .toArray();
