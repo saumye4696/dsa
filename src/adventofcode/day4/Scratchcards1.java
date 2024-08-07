@@ -9,9 +9,9 @@ import java.util.regex.Pattern;
 
 public class Scratchcards1 {
     private static final String FETCH_CARD_NUMBER_REGEX = "Card +(\\d+)";
+    private static final String FETCH_NUMBERS_FROM_STRING_REGEX = "\\s+";
 
     public static void main(String[] args) throws IOException {
-//        int i = Scratchcards.scorePerScratchcard("Card   2: 90 12 98 56 22 99 73 46  1 28 | 52 77 32  8 81 41 53 22 28 46 48 27 98  1 94 12 99 72 84 90 92 73 24 63 56");
         int i = Scratchcards1.readFile();
         System.out.println(i);
     }
@@ -35,11 +35,11 @@ public class Scratchcards1 {
         String s1 = listString.split("\\|")[0].trim();
         String s2 = listString.split("\\|")[1].trim();
 
-        int[] il1 = Arrays.stream(s1.split("\\s+"))
+        int[] il1 = Arrays.stream(s1.split(FETCH_NUMBERS_FROM_STRING_REGEX))
                 .mapToInt(Integer::parseInt)
                 .toArray();
 
-        int[] il2 = Arrays.stream(s2.split("\\s+"))
+        int[] il2 = Arrays.stream(s2.split(FETCH_NUMBERS_FROM_STRING_REGEX))
                 .mapToInt(Integer::parseInt)
                 .toArray();
 
