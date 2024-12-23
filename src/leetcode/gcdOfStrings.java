@@ -2,8 +2,6 @@ package leetcode;
 
 public class gcdOfStrings {
     public String gcdOfStrings(String str1, String str2) {
-        int l = str1.length() < str2.length() ? str1.length() : str2.length();
-
         if (!(str1 + str2).equals(str2 + str1))
             return "";
         int gcd = gcd(str1.length(), str2.length());
