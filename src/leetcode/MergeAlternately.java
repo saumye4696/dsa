@@ -1,5 +1,6 @@
 package leetcode;
 
+// 1768
 public class MergeAlternately {
     public String mergeAlternately(String word1, String word2) {
         int k = 0;
