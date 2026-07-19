@@ -54,6 +54,32 @@ public class Linked {
 
     }
 
+    public static Node insertAtPos(Node head, int pos, int val) {
+        if (pos < 1)
+            return head;
+
+        Node n = new Node(val);
+
+        if (head == null) {
+            return n;
+        }
+
+        Node temp = head;
+
+        for (int i = 0; i < pos - 1 && temp != null; i++) {
+            temp = temp.next;
+        }
+
+        if (temp == null) {
+            return head;
+        }
+
+        n.next = temp.next;
+        temp.next = n;
+
+        return head;
+    }
+
     public static void main(String[] args) {
         Node head = new Node(10);
         head.next = new Node(20);
@@ -62,7 +88,8 @@ public class Linked {
 
 //        Linked.traverseListRecusrion(head);
 //        head = insertAtFront(head, 1);
-        head = insertAtEnd(head, 1);
+//        head = insertAtEnd(head, 1);
+//        head = insertAtPos(head, 3, 1);
         Linked.traverseList(head);
 //        Node temp = head;
 //        while (temp != null) {
