@@ -11,6 +11,8 @@ class Node {
 }
 
 public class Linked {
+
+    // ------------------------------ TRAVERSAL ------------------------------
     public static void traverseList(Node head) {
         while (head != null) {
             System.out.println(head.data);
@@ -30,6 +32,7 @@ public class Linked {
 
     }
 
+    // ------------------------------ INSERTION ------------------------------
     public static Node insertAtFront(Node head, int x) {
         Node n = new Node(x);
         n.next = head;
@@ -79,6 +82,8 @@ public class Linked {
 
         return head;
     }
+
+    // ------------------------------ DELETION ------------------------------
 
     public static void main(String[] args) {
         Node head = new Node(10);
