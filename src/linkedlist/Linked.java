@@ -85,19 +85,34 @@ public class Linked {
 
     // ------------------------------ DELETION ------------------------------
     public static Node deleteFirst(Node head) {
+        if (head == null)
+            return null;
+
+        Node temp = head;
         head = head.next;
+        temp = null;
+
         return head;
     }
 
     public static Node deleteLast(Node head) {
-        Node current = head;
-        while(current.next.next != null) {
-            current = current.next;
-            current.next = null;
+        if (head == null) {
+            return head;
         }
+        if (head.next == null) {
+            return null;
+        }
+
+        Node current = head;
+        while (current.next.next != null) {
+                current = current.next;
+        }
+
+        current.next = null;
 
         return head;
     }
+
 
     // ------------------------------ MAIN ------------------------------
     public static void main(String[] args) {
