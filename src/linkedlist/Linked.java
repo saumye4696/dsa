@@ -84,7 +84,22 @@ public class Linked {
     }
 
     // ------------------------------ DELETION ------------------------------
+    public static Node deleteFirst(Node head) {
+        head = head.next;
+        return head;
+    }
 
+    public static Node deleteLast(Node head) {
+        Node current = head;
+        while(current.next.next != null) {
+            current = current.next;
+            current.next = null;
+        }
+
+        return head;
+    }
+
+    // ------------------------------ MAIN ------------------------------
     public static void main(String[] args) {
         Node head = new Node(10);
         head.next = new Node(20);
@@ -95,7 +110,10 @@ public class Linked {
 //        head = insertAtFront(head, 1);
 //        head = insertAtEnd(head, 1);
 //        head = insertAtPos(head, 3, 1);
+//        head = deleteFirst(head);
+        head = deleteLast(head);
         Linked.traverseList(head);
+
 //        Node temp = head;
 //        while (temp != null) {
 //            System.out.println(temp.data);
