@@ -105,7 +105,7 @@ public class Linked {
 
         Node current = head;
         while (current.next.next != null) {
-                current = current.next;
+            current = current.next;
         }
 
         current.next = null;
@@ -113,6 +113,26 @@ public class Linked {
         return head;
     }
 
+    public static Node deleteAtPos(Node head, int position) {
+        if (head == null) {
+            return null;
+        }
+
+        if (position == 1) {
+            head = head.next;
+            return head;
+        }
+        Node temp = head;
+        Node prev = null;
+        for (int i = 0; i < position; i++) {
+            prev = temp;
+            temp = temp.next;
+        }
+
+        prev.next = temp.next;
+
+        return head;
+    }
 
     // ------------------------------ MAIN ------------------------------
     public static void main(String[] args) {
