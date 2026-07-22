@@ -185,6 +185,19 @@ public class Linked {
         return current;
     }
 
+    public static int middleFloyd(Node head) {
+        Node slow = head;
+        Node fast = head;
+
+        // when fast reaches the end, slow will reach the middle
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+
+        return slow.data;
+
+    }
 
     // ------------------------------ MODIFY ------------------------------
 
