@@ -134,6 +134,52 @@ public class Linked {
         return head;
     }
 
+    // ------------------------------ SEARCH ------------------------------
+    public static boolean search(Node head, int key) {
+        Node current = head;
+
+        while (current != null) {
+            if (current.data == key) {
+                return true;
+            }
+            current = current.next;
+        }
+
+        return false;
+    }
+
+    public static boolean searchRecursion(Node head, int key) {
+        if (head == null) {
+            return false;
+        }
+
+        if (head.data == key)
+            return true;
+
+        if (head.next == null)
+            return false;
+
+        return searchRecursion(head.next, key);
+    }
+
+
+    // ------------------------------ MODIFY ------------------------------
+
+    /**
+     * Given a Singly linked list. The task is to modify the value of the first half of nodes
+     * such that 1st node's new value is equal to the value of the last node minus the first node's
+     * current value, 2nd node's new value is equal to the second last node's value minus 2nd nodes
+     * current value, likewise for first half nodes, then replace the second half of nodes with the initial
+     * values of the first half of nodes (values before modifying the nodes).
+     * <p>
+     * Note: If the size of it is odd then the value of the middle node remains unchanged.
+     */
+    static Node modify(Node head) {
+
+
+        return head;
+    }
+
     // ------------------------------ MAIN ------------------------------
     public static void main(String[] args) {
         Node head = new Node(10);
@@ -146,8 +192,10 @@ public class Linked {
 //        head = insertAtEnd(head, 1);
 //        head = insertAtPos(head, 3, 1);
 //        head = deleteFirst(head);
-        head = deleteLast(head);
-        Linked.traverseList(head);
+//        head = deleteLast(head);
+//        System.out.println(search(head, 40));
+        System.out.println(searchRecursion(head, 40));
+//        Linked.traverseList(head);
 
 //        Node temp = head;
 //        while (temp != null) {
