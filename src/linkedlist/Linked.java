@@ -162,6 +162,29 @@ public class Linked {
         return searchRecursion(head.next, key);
     }
 
+    // ------------------------------ MIDDLE ------------------------------
+    public static Node middle(Node head) {
+        Node current = head;
+        int count = 0;
+
+        while (current != null) {
+            current = current.next;
+            count++;
+        }
+        System.out.println(count);
+        count /= 2;
+
+        if (count % 2 == 0)
+            count++;
+
+        current = head;
+        for (int i = 0; i < count - 1; i++) {
+            current = current.next;
+        }
+
+        return current;
+    }
+
 
     // ------------------------------ MODIFY ------------------------------
 
@@ -174,7 +197,7 @@ public class Linked {
      * <p>
      * Note: If the size of it is odd then the value of the middle node remains unchanged.
      */
-    static Node modify(Node head) {
+    public static Node modify(Node head) {
 
 
         return head;
@@ -186,6 +209,7 @@ public class Linked {
         head.next = new Node(20);
         head.next.next = new Node(30);
         head.next.next.next = new Node(40);
+        head.next.next.next.next = new Node(50);
 
 //        Linked.traverseListRecusrion(head);
 //        head = insertAtFront(head, 1);
@@ -194,7 +218,8 @@ public class Linked {
 //        head = deleteFirst(head);
 //        head = deleteLast(head);
 //        System.out.println(search(head, 40));
-        System.out.println(searchRecursion(head, 40));
+//        System.out.println(searchRecursion(head, 40));
+        System.out.println(middle(head).data);
 //        Linked.traverseList(head);
 
 //        Node temp = head;
