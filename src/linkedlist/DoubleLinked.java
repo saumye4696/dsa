@@ -61,7 +61,7 @@ public class DoubleLinked {
         }
 
         Node current = head;
-        for (int i = 0; i < position -1 && current != null; i++) {
+        for (int i = 0; i < position - 1 && current != null; i++) {
             current = current.next;
         }
 
@@ -71,7 +71,7 @@ public class DoubleLinked {
 
         node.prev = current;
         node.next = current.next;
-        current.next= node;
+        current.next = node;
 
         // If the new node is not the last node,
         // update prev of next node to new node
@@ -112,6 +112,19 @@ public class DoubleLinked {
         return head;
     }
 
+    static Node deleteAtPosition(Node head, int position) {
+        if (head == null) {
+            return head;
+        }
+
+        Node current = head;
+        for (int i = 0; i < position && current != null; i++) {
+            current = current.next;
+        }
+
+        return head;
+    }
+
     // ------------------------------ MAIN ------------------------------
     public static void main(String[] args) {
         // Create the first node (head of the list)
@@ -131,7 +144,7 @@ public class DoubleLinked {
 
 //        head = insertAtFront(head, 5);
 //        head = insertAtEnd(head, 50);
-head = insertAtPosition(head, 3, 35);
+        head = insertAtPosition(head, 3, 35);
 
         // Traverse the list forward and print elements
         Node temp = head;
