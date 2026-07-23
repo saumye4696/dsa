@@ -216,6 +216,22 @@ public class Linked {
         return head;
     }
 
+    // ------------------------------ REVERSE ------------------------------
+    public static Node reverse(Node head) {
+        Node previous = null;
+        Node current = head;
+        Node other;
+
+        while (current != null) {
+            other = current.next;
+            current.next = previous;
+            previous = current;
+            current = other;
+        }
+
+        return previous;
+    }
+
     // ------------------------------ MAIN ------------------------------
     public static void main(String[] args) {
         Node head = new Node(10);
@@ -232,8 +248,9 @@ public class Linked {
 //        head = deleteLast(head);
 //        System.out.println(search(head, 40));
 //        System.out.println(searchRecursion(head, 40));
-        System.out.println(middle(head).data);
-//        Linked.traverseList(head);
+//        System.out.println(middle(head).data);
+        head = reverse(head);
+        Linked.traverseList(head);
 
 //        Node temp = head;
 //        while (temp != null) {
