@@ -13,6 +13,7 @@ class Node {
 }
 
 public class DoubleLinked {
+    // ------------------------------ INSERTION ------------------------------
     static Node insertAtFront(Node head, int x) {
         Node node = new Node(x);
 
@@ -46,6 +47,42 @@ public class DoubleLinked {
         return head;
     }
 
+    static Node insertAtPosition(Node head, int position, int x) {
+        Node node = new Node(x);
+        if (position == 1) {
+            node.next = head;
+
+            if (head != null) {
+                head.prev = node;
+            }
+
+            head = node;
+            return head;
+        }
+
+        Node current = head;
+        for (int i = 0; i < position -1 && current != null; i++) {
+            current = current.next;
+        }
+
+        if (current == null) {
+            return head;
+        }
+
+        node.prev = current;
+        node.next = current.next;
+        current.next= node;
+
+        // If the new node is not the last node,
+        // update prev of next node to new node
+        if (node.next != null) {
+            node.next.prev = node;
+        }
+
+        return head;
+    }
+
+    // ------------------------------ MAIN ------------------------------
     public static void main(String[] args) {
         // Create the first node (head of the list)
         Node head = new Node(10);
@@ -63,8 +100,8 @@ public class DoubleLinked {
         head.next.next.next.prev = head.next.next;
 
 //        head = insertAtFront(head, 5);
-        head = insertAtEnd(head, 50);
-
+//        head = insertAtEnd(head, 50);
+head = insertAtPosition(head, 3, 35);
         // Traverse the list forward and print elements
         Node temp = head;
         while (temp != null) {
