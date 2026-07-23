@@ -94,6 +94,24 @@ public class DoubleLinked {
         return head;
     }
 
+    static Node deleteLast(Node head) {
+        if (head == null) {
+            return null;
+        }
+
+        if (head.next == null)
+            return null;
+
+        Node current = head;
+        while (current.next != null) {
+            current = current.next;
+        }
+
+        current.prev.next = null;
+
+        return head;
+    }
+
     // ------------------------------ MAIN ------------------------------
     public static void main(String[] args) {
         // Create the first node (head of the list)
