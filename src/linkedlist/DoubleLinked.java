@@ -83,8 +83,15 @@ public class DoubleLinked {
     }
 
     // ------------------------------ DELETION ------------------------------
-    static void deleteFirst(Node head) {
+    static Node deleteFirst(Node head) {
+        if (head == null) {
+            return null;
+        }
 
+        head = head.next;
+        head.prev = null;
+
+        return head;
     }
 
     // ------------------------------ MAIN ------------------------------
