@@ -82,6 +82,11 @@ public class DoubleLinked {
         return head;
     }
 
+    // ------------------------------ DELETION ------------------------------
+    static void deleteFirst(Node head) {
+
+    }
+
     // ------------------------------ MAIN ------------------------------
     public static void main(String[] args) {
         // Create the first node (head of the list)
@@ -102,6 +107,7 @@ public class DoubleLinked {
 //        head = insertAtFront(head, 5);
 //        head = insertAtEnd(head, 50);
 head = insertAtPosition(head, 3, 35);
+
         // Traverse the list forward and print elements
         Node temp = head;
         while (temp != null) {
