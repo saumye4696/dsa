@@ -1,14 +1,15 @@
 package linkedlist;
 
-class Node {
-    int data;
-    Node next;
-
-    Node(int data) {
-        this.data = data;
-        this.next = null;
-    }
-}
+///  Commented to avoid conflict with DoubleLinked
+//class Node {
+//    int data;
+//    Node next;
+//
+//    Node(int data) {
+//        this.data = data;
+//        this.next = null;
+//    }
+//}
 
 public class Linked {
 
